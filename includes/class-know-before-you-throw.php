@@ -167,11 +167,6 @@ class Know_Before_You_Throw {
 
 		$plugin_public = new Know_Before_You_Throw_Public( $this->get_plugin_name(), $this->get_version() );
 
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-		$this->loader->add_action( 'init', $plugin_public, 'add_custom_rewrite_tag' );
-		$this->loader->add_action( 'init', $plugin_public, 'add_custom_rewrite_rule' );
-
 		$this->loader->add_shortcode( 'know_before_you_throw', $plugin_public, 'display_plugin' );
 
 		$this->loader->add_filter( 'query_vars', $plugin_public, 'add_custom_query_var' );
